@@ -1,0 +1,4 @@
+[ZoneTransfer]
+ZoneId=3
+ReferrerUrl=https://github.com/opencv/opencv/tree/master/data/haarcascades
+HostUrl=https://github.com/opencv/opencv/blob/master/data/haarcascades/haarcascade_frontalface_default.xml
