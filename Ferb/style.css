@@ -1,0 +1,210 @@
+.container{
+    /* By writng this styles we center the element */
+    position: absolute;
+    background: #f0f0f0;
+    height: 500px;
+    width: 500px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);/* This property take vlaues on X and Y */
+
+    /*  add shadow // This property take (horizintal value, vertical value, bluer, color) || (if it is positive it apply it on right and bottom and if it negative apply it on the left and top)*/
+    box-shadow: 16px 16px 10px #d7d7d7;
+    /*The border-radius property can take one(apply for all angels) or four values each value for angel(top left, top right, bottom right, bottom left)*/
+    border-radius: 20px;
+}
+
+.face{
+    position: relative;
+    height: 250px;
+    width: 60px;
+    background: #FCE5BC;
+    left: 220px;
+    top: 100px;
+    border: 4px solid #ffa945;
+    border-bottom: none;
+    transform: rotate(4deg);
+}
+
+/* "Pseudo selector" 
+The ::before selector inserts something before the content of each selected elements. 
+" styling before the element I choose (face in our case)"
+*/
+
+/* The mouth */
+.face::before{
+    /* The mouth is on the left of the face so we used before */
+    content: "";
+    position: absolute;
+    height: 14px;
+    width: 14px;
+    background: #FCE5BC;
+    top: 170px;
+    left: -12px;
+    border-left: 6px solid #ffa945;
+    border-bottom: 6px solid #ffa945;
+    border-bottom-left-radius: 10px;
+    transform: skew(-40deg); /* بتعمل انحراف للشكل */
+}
+
+/* The ear */
+.face::after{
+     /* The ear is on the left of the face so we used before */
+     content: "";
+     position: absolute;
+     height: 24px;
+     width: 24px;
+     background: #FCE5BC;
+     top: 80px;
+     left: 56px;
+     border-radius: 50%;
+     border: 4px solid #ffa945;
+     border-top:none ;
+     border-left:none ;
+     transform: rotate(-40deg);
+}
+
+.nose{
+    position: relative;
+    width: 50px;
+    height: 50px;
+    background: #FCE5BC;
+    border: 4px solid #ffa945;
+    left: 172px;
+    bottom: 90px;
+    border-right: none;
+    border-radius: 14px 0 0 14px;
+    transform: rotate(4deg);
+    z-index: 1; 
+}
+
+.nose::after{
+    content: "";
+    position: absolute;
+    height: 10px;
+    width: 30px;
+    background: #FCE5BC;
+    border-top: 4px solid #ffa945;
+    left: 30px;
+    top: -4px;
+}
+
+.eyes{
+    position: relative;
+    height: 44px;
+    width: 40px;
+    border-radius: 50%;
+    background: white;
+    left: 206px;
+    bottom: 188px;
+    border: 3px solid black;
+    transform: rotate(4deg);
+    /*"z-index" It determine the priority for the elements when they meet each other, what will be above the other. /* The highest value appears above */
+    /* At the nose we wrote 1 for that nose will come out over the eye.*/
+    z-index: 0; 
+}
+
+/* Inside the eye */
+.eyes::before{
+    content: "";
+    position:absolute;
+    height: 12px;
+    width: 10px;
+    background-color: black;
+    border-radius: 50%;
+    left: 14px;
+    top: 22px;
+    transform: rotate(16deg);
+}
+
+.eyes::after{
+    content: "";
+    position:absolute;
+    height: 4px;
+    width: 4px;
+    background-color: white;
+    border-radius: 50%;
+    left: 18px;
+    top: 24px;
+}
+
+.eye2{
+    width: 40px;
+    height: 40px;
+    bottom: 224px;
+    left: 234px;
+    z-index: 2;
+}
+
+.eye2::before{
+    top: 12px;
+}
+
+.eye2::after{
+    top:14px;
+}
+
+.hair{
+    position: relative;
+    bottom: 250px;
+    left: 10px;
+    z-index: 3;
+}
+/* Direct shild selector 
+".hair>" this > mean that you will choose child from the children inside the parent.  "nth-child(number)" determine which child.
+||This mean I need first child from the "div type" inside the parent"hair"||
+*/
+.hair>div:nth-child(1){
+    position: absolute;
+    height: 30px;
+    width: 100px;
+    border-top: 20px solid green;
+    left: 180px;
+    bottom: 40px;
+    border-radius: 50px 40px 0 0;
+    transform: rotate(30deg);
+}
+
+.hair>div:nth-child(2){
+    position: absolute;
+    height: 30px;
+    width: 100px;
+    border-top: 20px solid green;
+    left: 200px;
+    bottom: 40px;
+    border-radius: 50px 40px 0 0;
+    transform: rotate(70deg);
+}
+
+.hair>div:nth-child(3){
+    position: absolute;
+    height: 30px;
+    width: 80px;
+    border-top: 20px solid green;
+    left: 220px;
+    bottom: 50px;
+    border-radius: 50px 40px 0 0;
+    transform: rotate(130deg);
+}
+
+.hair>div:nth-child(4){
+    position: absolute;
+    height: 30px;
+    width: 100px;
+    border-top: 20px solid green;
+    left: 200px;
+    bottom: 20px;
+    border-radius: 50px 40px 0 0;
+    transform: rotate(20deg);
+}
+
+.hair>div:nth-child(5){
+    position: absolute;
+    height: 30px;
+    width: 50px;
+    border-top: 20px solid green;
+    left: 260px;
+    bottom: 20px;
+    border-radius: 50px 40px 0 0;
+    transform: rotate(10deg);
+}
